@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Digital_Diary.Data_Access_Layer
 {
-    class DataAccess
+    class DataAccess:IDisposable
     {
         SqlConnection connection;
         SqlCommand command;
@@ -21,7 +21,7 @@ namespace Digital_Diary.Data_Access_Layer
         {
             this.command = new SqlCommand(sql, this.connection);
             SqlDataReader reader = this.command.ExecuteReader();
-            this.connection.Close();
+            //this.connection.Close();
             return reader;
         }
         public int ExecuteQuery(string sql)
@@ -30,6 +30,11 @@ namespace Digital_Diary.Data_Access_Layer
             int result = this.command.ExecuteNonQuery();
             this.connection.Close();
             return result;
+        }
+
+        public void Dispose()
+        {
+            this.connection.Close();
         }
     }
 }
