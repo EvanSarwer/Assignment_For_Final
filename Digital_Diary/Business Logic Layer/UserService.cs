@@ -15,6 +15,11 @@ namespace Digital_Diary.Business_Logic_Layer
         {
             this.userDataAccess = new UserDataAccess();
         }
+
+        public bool LginValidation(string userName,string password)
+        {
+            return userDataAccess.LoginValidation(userName, password);
+        }
         public List<User> GetListOfUsers()
         {
             return this.userDataAccess.GetAllUsers();

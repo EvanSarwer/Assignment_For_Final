@@ -14,8 +14,10 @@ namespace Digital_Diary.Presentation_Layer
     public partial class UserManagement : Form
     {
         int id = 0;
-        public UserManagement()
+        Home home;
+        public UserManagement(Home home)
         {
+            this.home = home;
             InitializeComponent();
             addUserButton.Click += this.RefreshGridView;
             addUserButton.Click += this.ClearFields;
@@ -101,6 +103,12 @@ namespace Digital_Diary.Presentation_Layer
         {
             UserService userService = new UserService();
             userWiseEventDataGridView.DataSource = userService.GetEventListByUser(userWiseEventComboBox.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            home.Show();
+            this.Hide();
         }
     }
 }

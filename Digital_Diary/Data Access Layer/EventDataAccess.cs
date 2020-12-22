@@ -47,5 +47,25 @@ namespace Digital_Diary.Data_Access_Layer
             reader.Read();
             return (int)reader["Id"];
         }
+        public List<Event> GetEventsForSearch(string eventTitle)
+        {
+            string sql = "SELECT * FROM Events WHERE EventTitle LIKE'%"+eventTitle+"%'";
+            this.dataAccess = new DataAccess();
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<Event> events = new List<Event>();
+            while (reader.Read())
+            {
+                Event eventz = new Event();
+                eventz.EventID = (int)reader["EventID"];
+                eventz.EventTitle = reader["EventTitle"].ToString();
+                eventz.Date = reader["Date"].ToString();
+                eventz.EventDescription = reader["EventDescription"].ToString();
+                eventz.UpdatedDate = reader["UpdatedDate"].ToString();
+                eventz.Importance = reader["Importance"].ToString();
+                eventz.Id = (int)reader["Id"];
+                events.Add(eventz);
+            }
+            return events;
+        }
     }
 }

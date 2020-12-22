@@ -13,8 +13,10 @@ namespace Digital_Diary.Presentation_Layer
 {
     public partial class EventManagement : Form
     {
-        public EventManagement()
+        Home home;
+        public EventManagement(Home home)
         {
+            this.home = home;
             InitializeComponent();
             addEventButton.Click += this.RefreshGridView;
         }
@@ -48,6 +50,18 @@ namespace Digital_Diary.Presentation_Layer
             {
                 MessageBox.Show("Error adding Event");
             }
+        }
+
+        private void SearchEventTitleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            searchEventGridView.DataSource = eventService.GetEventListForSearch(SearchEventTitleTextBox.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            home.Show();
+            this.Hide();
         }
     }
 }

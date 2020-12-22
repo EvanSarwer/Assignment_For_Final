@@ -43,9 +43,10 @@
             this.deleteUserIdTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.userWiseEventComboBox = new System.Windows.Forms.ComboBox();
             this.userWiseEventDataGridView = new System.Windows.Forms.DataGridView();
+            this.userWiseEventComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loadUserDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -208,25 +209,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "User Wise Event";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "User Name";
-            // 
-            // userWiseEventComboBox
-            // 
-            this.userWiseEventComboBox.FormattingEnabled = true;
-            this.userWiseEventComboBox.Location = new System.Drawing.Point(137, 51);
-            this.userWiseEventComboBox.Name = "userWiseEventComboBox";
-            this.userWiseEventComboBox.Size = new System.Drawing.Size(144, 21);
-            this.userWiseEventComboBox.TabIndex = 5;
-            this.userWiseEventComboBox.SelectedIndexChanged += new System.EventHandler(this.userWiseEventComboBox_SelectedIndexChanged);
-            // 
             // userWiseEventDataGridView
             // 
             this.userWiseEventDataGridView.AllowUserToAddRows = false;
@@ -238,11 +220,41 @@
             this.userWiseEventDataGridView.Size = new System.Drawing.Size(353, 150);
             this.userWiseEventDataGridView.TabIndex = 6;
             // 
+            // userWiseEventComboBox
+            // 
+            this.userWiseEventComboBox.FormattingEnabled = true;
+            this.userWiseEventComboBox.Location = new System.Drawing.Point(137, 51);
+            this.userWiseEventComboBox.Name = "userWiseEventComboBox";
+            this.userWiseEventComboBox.Size = new System.Drawing.Size(144, 21);
+            this.userWiseEventComboBox.TabIndex = 5;
+            this.userWiseEventComboBox.SelectedIndexChanged += new System.EventHandler(this.userWiseEventComboBox_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(21, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "User Name";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(77, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -289,5 +301,6 @@
         private System.Windows.Forms.DataGridView userWiseEventDataGridView;
         private System.Windows.Forms.ComboBox userWiseEventComboBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

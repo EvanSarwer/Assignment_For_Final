@@ -15,6 +15,19 @@ namespace Digital_Diary.Data_Access_Layer
         {
             this.dataAccess = new DataAccess();
         }
+        public bool LoginValidation(string userName,string password)
+        {
+            string sql = "SELECT * FROM Users WHERE Username='" + userName + "' AND Password='" + password + "'";
+            SqlDataReader reader = dataAccess.GetData(sql);
+            if(reader.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public List<User> GetAllUsers()
         {
             string sql = "SELECT * FROM Users";

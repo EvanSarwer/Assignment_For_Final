@@ -33,8 +33,12 @@ namespace Digital_Diary.Business_Logic_Layer
             eventDataAccess = new EventDataAccess();
             return eventDataAccess.InsertEvent(eventz);
         }
-        
+        public List<Event> GetEventListForSearch(string eventTitle)
+        {
+            return eventDataAccess.GetEventsForSearch(eventTitle);
+        }
 
-        
+
+
     }
 }
