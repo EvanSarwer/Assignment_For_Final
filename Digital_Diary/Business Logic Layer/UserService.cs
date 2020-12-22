@@ -19,5 +19,34 @@ namespace Digital_Diary.Business_Logic_Layer
         {
             return this.userDataAccess.GetAllUsers();
         }
+        public int AddNewUser(string userName)
+        {
+            User user = new User()
+            {
+                Username = userName
+            };
+            return this.userDataAccess.InsertUser(user);
+        }
+        public int UpdateUser(int id,string userName)
+        {
+            User user = new User()
+            {
+                Id = id,
+                Username = userName
+            };
+            return this.userDataAccess.UpdateUser(user);
+        }
+        public int DeleteUser(string id)
+        {
+            return this.userDataAccess.DeleteUser(Convert.ToInt32(id));
+        }
+        public List<string> GetUserNameList()
+        {
+            return this.userDataAccess.GetUserNames();
+        }
+        public List<Event> GetEventListByUser(string userName)
+        {
+            return this.userDataAccess.GetEventByUser(userName);
+        }
     }
 }

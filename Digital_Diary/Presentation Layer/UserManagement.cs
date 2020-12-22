@@ -13,9 +13,16 @@ namespace Digital_Diary.Presentation_Layer
 {
     public partial class UserManagement : Form
     {
+        int id = 0;
         public UserManagement()
         {
             InitializeComponent();
+            addUserButton.Click += this.RefreshGridView;
+            addUserButton.Click += this.ClearFields;
+            updateUserButton.Click += this.RefreshGridView;
+            updateUserButton.Click += this.ClearFields;
+            deleteUserButton.Click += this.RefreshGridView;
+            deleteUserButton.Click += this.ClearFields;
         }
 
         private void UserManagement_FormClosing(object sender, FormClosingEventArgs e)
@@ -27,6 +34,73 @@ namespace Digital_Diary.Presentation_Layer
         {
             UserService userService = new UserService();
             loadUserDataGridView.DataSource = userService.GetListOfUsers();
+            userService = new UserService();
+            userWiseEventComboBox.DataSource = userService.GetUserNameList();
+        }
+        void RefreshGridView(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            loadUserDataGridView.DataSource = userService.GetListOfUsers();
+            userService = new UserService();
+            userWiseEventComboBox.DataSource = userService.GetUserNameList();
+        }
+        void ClearFields(object sender, EventArgs e)
+        {
+            addUserNameTextBox.Text = updateUserNameTextBox.Text=deleteUserIdTextBox.Text= string.Empty;
+        }
+
+        private void addUserButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            int result = userService.AddNewUser(addUserNameTextBox.Text);
+            if(result > 0)
+            {
+                MessageBox.Show("User added successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error adding category");
+            }
+        }
+
+        private void loadUserDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id=(int)loadUserDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            updateUserNameTextBox.Text = loadUserDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
+
+        private void updateUserButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            int result = userService.UpdateUser(id,updateUserNameTextBox.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("User updated successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error updating user");
+            }
+        }
+
+        private void deleteUserButton_Click(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            int result = userService.DeleteUser(deleteUserIdTextBox.Text);
+            if (result > 0)
+            {
+                MessageBox.Show("User deleted successfully");
+            }
+            else
+            {
+                MessageBox.Show("Error deleting user");
+            }
+        }
+
+        private void userWiseEventComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UserService userService = new UserService();
+            userWiseEventDataGridView.DataSource = userService.GetEventListByUser(userWiseEventComboBox.Text);
         }
     }
 }

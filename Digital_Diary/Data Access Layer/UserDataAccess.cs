@@ -57,6 +57,41 @@ namespace Digital_Diary.Data_Access_Layer
             int result = this.dataAccess.ExecuteQuery(sql);
             return result;
         }
+        public List<string> GetUserNames()
+        {
+            string sql = "SELECT * FROM Users";
+            SqlDataReader reader = this.dataAccess.GetData(sql);
+            List<string> users = new List<string>();
+            while (reader.Read())
+            {
+                users.Add(reader["UserName"].ToString());
+            }
+            return users;
+        }
+        public List<Event> GetEventByUser(string userName)
+        {
+            string userIdSearch = "SELECT * FROM Users WHERE Username='"+userName+"'";
+            SqlDataReader reader = this.dataAccess.GetData(userIdSearch);
+            reader.Read();
+            int userId = (int)reader["Id"];
+            string sql = "SELECT * FROM Events WHERE Id=" +userId;
+            this.dataAccess = new DataAccess();
+            reader = this.dataAccess.GetData(sql);
+            List<Event> events = new List<Event>();
+            while(reader.Read())
+            {
+                Event eventz =new Event();
+                eventz.EventID = (int)reader["EventID"];
+                eventz.EventTitle = reader["EventTitle"].ToString();
+                eventz.Date = reader["Date"].ToString();
+                eventz.EventDescription = reader["EventDescription"].ToString();
+                eventz.UpdatedDate = reader["UpdatedDate"].ToString();
+                eventz.Importance = reader["Importance"].ToString();
+                eventz.Id = (int)reader["Id"];
+                events.Add(eventz);
+            }
+            return events;
+        }
 
     }
 }
