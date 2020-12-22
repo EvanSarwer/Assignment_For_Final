@@ -35,7 +35,7 @@ namespace Digital_Diary.Presentation_Layer
                 bool result = userService.LginValidation(usernameTextBox.Text, passwordTextBox.Text);
                 if(result)
                 {
-                    Home home = new Home();
+                    Home home = new Home(usernameTextBox.Text);
                     home.Show();
                     this.Hide();
                 }

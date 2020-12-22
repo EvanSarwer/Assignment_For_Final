@@ -41,7 +41,7 @@
             this.actionOfDairyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -50,22 +50,23 @@
             this.actionOfDairyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageUserToolStripMenuItem,
             this.manageEventToolStripMenuItem});
+            this.actionOfDairyToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.actionOfDairyToolStripMenuItem.Name = "actionOfDairyToolStripMenuItem";
-            this.actionOfDairyToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.actionOfDairyToolStripMenuItem.Size = new System.Drawing.Size(160, 29);
             this.actionOfDairyToolStripMenuItem.Text = "Action of Dairy ";
             // 
             // manageUserToolStripMenuItem
             // 
             this.manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
-            this.manageUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.manageUserToolStripMenuItem.Text = "Manage User";
+            this.manageUserToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
+            this.manageUserToolStripMenuItem.Text = "Search/Update/Delete Event";
             this.manageUserToolStripMenuItem.Click += new System.EventHandler(this.manageUserToolStripMenuItem_Click);
             // 
             // manageEventToolStripMenuItem
             // 
             this.manageEventToolStripMenuItem.Name = "manageEventToolStripMenuItem";
-            this.manageEventToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.manageEventToolStripMenuItem.Text = "Manage Event";
+            this.manageEventToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
+            this.manageEventToolStripMenuItem.Text = "Add New Event/Search By Title";
             this.manageEventToolStripMenuItem.Click += new System.EventHandler(this.manageEventToolStripMenuItem_Click);
             // 
             // Home
@@ -77,7 +78,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
+            this.Text = "Digital Diary-Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

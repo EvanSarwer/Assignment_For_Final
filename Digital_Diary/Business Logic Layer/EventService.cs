@@ -33,9 +33,42 @@ namespace Digital_Diary.Business_Logic_Layer
             eventDataAccess = new EventDataAccess();
             return eventDataAccess.InsertEvent(eventz);
         }
-        public List<Event> GetEventListForSearch(string eventTitle)
+        public int UpdateEvent(int eventId,string eventTitle,string updatedDate,string eventDescription)
         {
-            return eventDataAccess.GetEventsForSearch(eventTitle);
+            Event eventz = new Event()
+            {
+                EventID=eventId,
+                EventTitle = eventTitle,
+                UpdatedDate = updatedDate,
+                EventDescription = eventDescription
+            };
+            return eventDataAccess.UpdateEvent(eventz);
+        }
+        public int DeleteEvent(string id)
+        {
+            return this.eventDataAccess.DeleteEvent(Convert.ToInt32(id));
+        }
+        public List<Event> GetEventListForSearch(string userName,string eventTitle)
+        {
+            int userId = eventDataAccess.GetUserId(userName);
+            Event eventz = new Event()
+            {
+                EventTitle = eventTitle,
+                Id = userId
+            };
+            eventDataAccess = new EventDataAccess();
+            return eventDataAccess.GetEventsForSearch(userId,eventTitle);
+        }
+        public List<Event> GetEventListSearchByImpotance(string userName, string importance)
+        {
+            int userId = eventDataAccess.GetUserId(userName);
+            Event eventz = new Event()
+            {
+                Importance = importance,
+                Id = userId
+            };
+            eventDataAccess = new EventDataAccess();
+            return eventDataAccess.GetEventsForSearchByImportance(userId, importance);
         }
 
 

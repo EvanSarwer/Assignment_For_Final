@@ -14,17 +14,20 @@ namespace Digital_Diary.Presentation_Layer
     public partial class UserManagement : Form
     {
         int id = 0;
+        int eid = 0;
         Home home;
-        public UserManagement(Home home)
+        string message;
+        public UserManagement(Home home,string message)
         {
+            this.message = message;
             this.home = home;
             InitializeComponent();
-            addUserButton.Click += this.RefreshGridView;
-            addUserButton.Click += this.ClearFields;
-            updateUserButton.Click += this.RefreshGridView;
-            updateUserButton.Click += this.ClearFields;
-            deleteUserButton.Click += this.RefreshGridView;
-            deleteUserButton.Click += this.ClearFields;
+           // addUserButton.Click += this.RefreshGridView;
+          //  addUserButton.Click += this.ClearFields;
+            updateEventButton.Click += this.RefreshGridView;
+            updateEventButton.Click += this.ClearFields;
+            deleteEventButton.Click += this.RefreshGridView;
+            deleteEventButton.Click += this.ClearFields;
         }
 
         private void UserManagement_FormClosing(object sender, FormClosingEventArgs e)
@@ -35,80 +38,120 @@ namespace Digital_Diary.Presentation_Layer
         private void UserManagement_Load(object sender, EventArgs e)
         {
             UserService userService = new UserService();
-            loadUserDataGridView.DataSource = userService.GetListOfUsers();
-            userService = new UserService();
-            userWiseEventComboBox.DataSource = userService.GetUserNameList();
+           // loadUserDataGridView.DataSource = userService.GetListOfUsers();
+           // userService = new UserService();
+          //  userWiseEventComboBox.DataSource = userService.GetUserNameList();
+          //  userService = new UserService();
+            loadListOfEventsGridView.DataSource = userService.GetEventListByUser(message);
+
         }
         void RefreshGridView(object sender, EventArgs e)
         {
             UserService userService = new UserService();
-            loadUserDataGridView.DataSource = userService.GetListOfUsers();
-            userService = new UserService();
-            userWiseEventComboBox.DataSource = userService.GetUserNameList();
+           // loadUserDataGridView.DataSource = userService.GetListOfUsers();
+           // userService = new UserService();
+          //  userWiseEventComboBox.DataSource = userService.GetUserNameList();
+          //  userService = new UserService();
+            loadListOfEventsGridView.DataSource = userService.GetEventListByUser(message);
         }
         void ClearFields(object sender, EventArgs e)
         {
-            addUserNameTextBox.Text = updateUserNameTextBox.Text=deleteUserIdTextBox.Text= string.Empty;
+            updateEventTitleTextBox.Text=deleteEventTitleTextBox.Text=updateEventDescriptionTextBox.Text= string.Empty;
+
         }
 
-        private void addUserButton_Click(object sender, EventArgs e)
-        {
-            UserService userService = new UserService();
-            int result = userService.AddNewUser(addUserNameTextBox.Text);
-            if(result > 0)
-            {
-                MessageBox.Show("User added successfully");
-            }
-            else
-            {
-                MessageBox.Show("Error adding category");
-            }
-        }
+        //private void addUserButton_Click(object sender, EventArgs e)
+       // {
+        //    UserService userService = new UserService();
+        //    int result = userService.AddNewUser(addUserNameTextBox.Text);
+        //    if(result > 0)
+        //    {
+        //        MessageBox.Show("User added successfully");
+       //     }
+        //    else
+        //    {
+         //       MessageBox.Show("Error adding category");
+         //   }
+      //  }
 
-        private void loadUserDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void loadListOfEventsGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id=(int)loadUserDataGridView.Rows[e.RowIndex].Cells[0].Value;
-            updateUserNameTextBox.Text = loadUserDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            id = (int)loadListOfEventsGridView.Rows[e.RowIndex].Cells[0].Value;
+            updateEventTitleTextBox.Text = loadListOfEventsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            updateEventDescriptionTextBox.Text = loadListOfEventsGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
         private void updateUserButton_Click(object sender, EventArgs e)
         {
-            UserService userService = new UserService();
-            int result = userService.UpdateUser(id,updateUserNameTextBox.Text);
+            EventService eventService = new EventService();
+            int result = eventService.UpdateEvent(id,updateEventTitleTextBox.Text,updateEventLastDateTimePicker.Text,updateEventDescriptionTextBox.Text);
             if (result > 0)
             {
-                MessageBox.Show("User updated successfully");
+                MessageBox.Show("Event updated successfully");
             }
             else
             {
-                MessageBox.Show("Error updating user");
+                MessageBox.Show("Error updating Event");
             }
         }
 
         private void deleteUserButton_Click(object sender, EventArgs e)
         {
-            UserService userService = new UserService();
-            int result = userService.DeleteUser(deleteUserIdTextBox.Text);
-            if (result > 0)
-            {
-                MessageBox.Show("User deleted successfully");
-            }
-            else
-            {
-                MessageBox.Show("Error deleting user");
-            }
+            
+            //UserService userService = new UserService();
+            //int result = userService.DeleteUser(deleteEventTitleTextBox.Text);
+            //if (result > 0)
+            //{
+            //   MessageBox.Show("User deleted successfully");
+            //}
+            //else
+            //{
+            //  MessageBox.Show("Error deleting user");
+            //}
         }
 
-        private void userWiseEventComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UserService userService = new UserService();
-            userWiseEventDataGridView.DataSource = userService.GetEventListByUser(userWiseEventComboBox.Text);
-        }
+        //private void userWiseEventComboBox_SelectedIndexChanged(object sender, EventArgs e)
+       // {
+       //     UserService userService = new UserService();
+       //     SearchEventByImportanceDataGridView.DataSource = userService.GetEventListByUser(userWiseEventComboBox.Text);
+      //  }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             home.Show();
             this.Hide();
+        }
+
+        private void updateUserButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchEventByImportanceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            SearchEventByImportanceDataGridView.DataSource = eventService.GetEventListSearchByImpotance(message, SearchEventByImportanceComboBox.Text);
+        }
+
+        private void SearchEventByImportanceDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            eid = (int)loadListOfEventsGridView.Rows[e.RowIndex].Cells[0].Value;
+            deleteEventTitleTextBox.Text = loadListOfEventsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void deleteEventButton_Click(object sender, EventArgs e)
+        {
+            EventService eventService = new EventService();
+            int result = eventService.DeleteEvent(eid.ToString());
+            if (result > 0)
+            {
+               MessageBox.Show("Event deleted successfully");
+            }
+            else
+            {
+              MessageBox.Show("Error deleting Event");
+            }
         }
     }
 }

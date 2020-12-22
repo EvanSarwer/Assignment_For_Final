@@ -28,164 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.loadUserDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.addUserButton = new System.Windows.Forms.Button();
-            this.addUserNameTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.updateUserButton = new System.Windows.Forms.Button();
-            this.updateUserNameTextBox = new System.Windows.Forms.TextBox();
+            this.updateEventLastDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.updateEventDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.updateEventButton = new System.Windows.Forms.Button();
+            this.updateEventTitleTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.deleteUserButton = new System.Windows.Forms.Button();
-            this.deleteUserIdTextBox = new System.Windows.Forms.TextBox();
+            this.deleteEventButton = new System.Windows.Forms.Button();
+            this.deleteEventTitleTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.userWiseEventDataGridView = new System.Windows.Forms.DataGridView();
-            this.userWiseEventComboBox = new System.Windows.Forms.ComboBox();
+            this.SearchEventByImportanceComboBox = new System.Windows.Forms.ComboBox();
+            this.SearchEventByImportanceDataGridView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.loadUserDataGridView)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.loadListOfEventsGridView = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userWiseEventDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchEventByImportanceDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadListOfEventsGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // loadUserDataGridView
-            // 
-            this.loadUserDataGridView.AllowUserToAddRows = false;
-            this.loadUserDataGridView.AllowUserToDeleteRows = false;
-            this.loadUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loadUserDataGridView.Location = new System.Drawing.Point(513, 21);
-            this.loadUserDataGridView.Name = "loadUserDataGridView";
-            this.loadUserDataGridView.ReadOnly = true;
-            this.loadUserDataGridView.Size = new System.Drawing.Size(275, 127);
-            this.loadUserDataGridView.TabIndex = 0;
-            this.loadUserDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadUserDataGridView_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(509, -1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "List of Users";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.addUserButton);
-            this.groupBox1.Controls.Add(this.addUserNameTextBox);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(304, 90);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add New User";
-            // 
-            // addUserButton
-            // 
-            this.addUserButton.Location = new System.Drawing.Point(114, 55);
-            this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(166, 30);
-            this.addUserButton.TabIndex = 3;
-            this.addUserButton.Text = "Add User";
-            this.addUserButton.UseVisualStyleBackColor = true;
-            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
-            // 
-            // addUserNameTextBox
-            // 
-            this.addUserNameTextBox.Location = new System.Drawing.Point(114, 26);
-            this.addUserNameTextBox.Name = "addUserNameTextBox";
-            this.addUserNameTextBox.Size = new System.Drawing.Size(166, 23);
-            this.addUserNameTextBox.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "User Name";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.updateUserButton);
-            this.groupBox2.Controls.Add(this.updateUserNameTextBox);
+            this.groupBox2.Controls.Add(this.updateEventLastDateTimePicker);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.updateEventDescriptionTextBox);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.updateEventButton);
+            this.groupBox2.Controls.Add(this.updateEventTitleTextBox);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 108);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(304, 90);
+            this.groupBox2.Size = new System.Drawing.Size(366, 241);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Update User";
+            this.groupBox2.Text = "Update Event";
             // 
-            // updateUserButton
+            // updateEventLastDateTimePicker
             // 
-            this.updateUserButton.Location = new System.Drawing.Point(114, 49);
-            this.updateUserButton.Name = "updateUserButton";
-            this.updateUserButton.Size = new System.Drawing.Size(166, 30);
-            this.updateUserButton.TabIndex = 3;
-            this.updateUserButton.Text = "Update User";
-            this.updateUserButton.UseVisualStyleBackColor = true;
-            this.updateUserButton.Click += new System.EventHandler(this.updateUserButton_Click);
+            this.updateEventLastDateTimePicker.Location = new System.Drawing.Point(168, 56);
+            this.updateEventLastDateTimePicker.Name = "updateEventLastDateTimePicker";
+            this.updateEventLastDateTimePicker.Size = new System.Drawing.Size(166, 23);
+            this.updateEventLastDateTimePicker.TabIndex = 7;
             // 
-            // updateUserNameTextBox
+            // label9
             // 
-            this.updateUserNameTextBox.Location = new System.Drawing.Point(114, 22);
-            this.updateUserNameTextBox.Name = "updateUserNameTextBox";
-            this.updateUserNameTextBox.Size = new System.Drawing.Size(166, 23);
-            this.updateUserNameTextBox.TabIndex = 2;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 19);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Last Update";
+            // 
+            // updateEventDescriptionTextBox
+            // 
+            this.updateEventDescriptionTextBox.Location = new System.Drawing.Point(168, 95);
+            this.updateEventDescriptionTextBox.Multiline = true;
+            this.updateEventDescriptionTextBox.Name = "updateEventDescriptionTextBox";
+            this.updateEventDescriptionTextBox.Size = new System.Drawing.Size(166, 86);
+            this.updateEventDescriptionTextBox.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 95);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 19);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Event Description";
+            // 
+            // updateEventButton
+            // 
+            this.updateEventButton.Location = new System.Drawing.Point(168, 201);
+            this.updateEventButton.Name = "updateEventButton";
+            this.updateEventButton.Size = new System.Drawing.Size(166, 30);
+            this.updateEventButton.TabIndex = 3;
+            this.updateEventButton.Text = "Update Event";
+            this.updateEventButton.UseVisualStyleBackColor = true;
+            this.updateEventButton.Click += new System.EventHandler(this.updateUserButton_Click);
+            // 
+            // updateEventTitleTextBox
+            // 
+            this.updateEventTitleTextBox.Location = new System.Drawing.Point(168, 19);
+            this.updateEventTitleTextBox.Name = "updateEventTitleTextBox";
+            this.updateEventTitleTextBox.Size = new System.Drawing.Size(166, 23);
+            this.updateEventTitleTextBox.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 26);
+            this.label2.Location = new System.Drawing.Point(6, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "User Name";
+            this.label2.Text = "Event Title";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.deleteUserButton);
-            this.groupBox3.Controls.Add(this.deleteUserIdTextBox);
+            this.groupBox3.Controls.Add(this.deleteEventButton);
+            this.groupBox3.Controls.Add(this.deleteEventTitleTextBox);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 228);
+            this.groupBox3.Location = new System.Drawing.Point(22, 318);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(304, 90);
+            this.groupBox3.Size = new System.Drawing.Size(314, 118);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Delete User";
+            this.groupBox3.Text = "Delete Event";
             // 
-            // deleteUserButton
+            // deleteEventButton
             // 
-            this.deleteUserButton.Location = new System.Drawing.Point(114, 49);
-            this.deleteUserButton.Name = "deleteUserButton";
-            this.deleteUserButton.Size = new System.Drawing.Size(166, 30);
-            this.deleteUserButton.TabIndex = 3;
-            this.deleteUserButton.Text = "Delete User";
-            this.deleteUserButton.UseVisualStyleBackColor = true;
-            this.deleteUserButton.Click += new System.EventHandler(this.deleteUserButton_Click);
+            this.deleteEventButton.Location = new System.Drawing.Point(114, 69);
+            this.deleteEventButton.Name = "deleteEventButton";
+            this.deleteEventButton.Size = new System.Drawing.Size(166, 30);
+            this.deleteEventButton.TabIndex = 3;
+            this.deleteEventButton.Text = "Delete Event";
+            this.deleteEventButton.UseVisualStyleBackColor = true;
+            this.deleteEventButton.Click += new System.EventHandler(this.deleteEventButton_Click);
             // 
-            // deleteUserIdTextBox
+            // deleteEventTitleTextBox
             // 
-            this.deleteUserIdTextBox.Location = new System.Drawing.Point(114, 22);
-            this.deleteUserIdTextBox.Name = "deleteUserIdTextBox";
-            this.deleteUserIdTextBox.Size = new System.Drawing.Size(166, 23);
-            this.deleteUserIdTextBox.TabIndex = 2;
+            this.deleteEventTitleTextBox.Location = new System.Drawing.Point(114, 22);
+            this.deleteEventTitleTextBox.Name = "deleteEventTitleTextBox";
+            this.deleteEventTitleTextBox.Size = new System.Drawing.Size(166, 23);
+            this.deleteEventTitleTextBox.TabIndex = 2;
             // 
             // label4
             // 
@@ -193,55 +169,61 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 19);
+            this.label4.Size = new System.Drawing.Size(88, 19);
             this.label4.TabIndex = 1;
-            this.label4.Text = "User ID";
+            this.label4.Text = "Event Title";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.userWiseEventDataGridView);
-            this.groupBox4.Controls.Add(this.userWiseEventComboBox);
+            this.groupBox4.Controls.Add(this.SearchEventByImportanceComboBox);
+            this.groupBox4.Controls.Add(this.SearchEventByImportanceDataGridView);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Location = new System.Drawing.Point(376, 157);
+            this.groupBox4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(451, 253);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(384, 257);
+            this.groupBox4.Size = new System.Drawing.Size(325, 203);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "User Wise Event";
+            this.groupBox4.Text = "Search by Event Importance";
             // 
-            // userWiseEventDataGridView
+            // SearchEventByImportanceComboBox
             // 
-            this.userWiseEventDataGridView.AllowUserToAddRows = false;
-            this.userWiseEventDataGridView.AllowUserToDeleteRows = false;
-            this.userWiseEventDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userWiseEventDataGridView.Location = new System.Drawing.Point(25, 93);
-            this.userWiseEventDataGridView.Name = "userWiseEventDataGridView";
-            this.userWiseEventDataGridView.ReadOnly = true;
-            this.userWiseEventDataGridView.Size = new System.Drawing.Size(353, 150);
-            this.userWiseEventDataGridView.TabIndex = 6;
+            this.SearchEventByImportanceComboBox.FormattingEnabled = true;
+            this.SearchEventByImportanceComboBox.Items.AddRange(new object[] {
+            "High",
+            "Moderate",
+            "Less"});
+            this.SearchEventByImportanceComboBox.Location = new System.Drawing.Point(171, 22);
+            this.SearchEventByImportanceComboBox.Name = "SearchEventByImportanceComboBox";
+            this.SearchEventByImportanceComboBox.Size = new System.Drawing.Size(121, 27);
+            this.SearchEventByImportanceComboBox.TabIndex = 7;
+            this.SearchEventByImportanceComboBox.SelectedIndexChanged += new System.EventHandler(this.SearchEventByImportanceComboBox_SelectedIndexChanged);
             // 
-            // userWiseEventComboBox
+            // SearchEventByImportanceDataGridView
             // 
-            this.userWiseEventComboBox.FormattingEnabled = true;
-            this.userWiseEventComboBox.Location = new System.Drawing.Point(137, 51);
-            this.userWiseEventComboBox.Name = "userWiseEventComboBox";
-            this.userWiseEventComboBox.Size = new System.Drawing.Size(144, 21);
-            this.userWiseEventComboBox.TabIndex = 5;
-            this.userWiseEventComboBox.SelectedIndexChanged += new System.EventHandler(this.userWiseEventComboBox_SelectedIndexChanged);
+            this.SearchEventByImportanceDataGridView.AllowUserToAddRows = false;
+            this.SearchEventByImportanceDataGridView.AllowUserToDeleteRows = false;
+            this.SearchEventByImportanceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SearchEventByImportanceDataGridView.Location = new System.Drawing.Point(10, 61);
+            this.SearchEventByImportanceDataGridView.Name = "SearchEventByImportanceDataGridView";
+            this.SearchEventByImportanceDataGridView.ReadOnly = true;
+            this.SearchEventByImportanceDataGridView.Size = new System.Drawing.Size(309, 136);
+            this.SearchEventByImportanceDataGridView.TabIndex = 6;
+            this.SearchEventByImportanceDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SearchEventByImportanceDataGridView_CellClick);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 51);
+            this.label5.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 19);
+            this.label5.Size = new System.Drawing.Size(137, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "User Name";
+            this.label5.Text = "Importance of Event";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(77, 355);
+            this.button1.Location = new System.Drawing.Point(701, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -249,58 +231,76 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // loadListOfEventsGridView
+            // 
+            this.loadListOfEventsGridView.AllowUserToAddRows = false;
+            this.loadListOfEventsGridView.AllowUserToDeleteRows = false;
+            this.loadListOfEventsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loadListOfEventsGridView.Location = new System.Drawing.Point(451, 50);
+            this.loadListOfEventsGridView.Name = "loadListOfEventsGridView";
+            this.loadListOfEventsGridView.ReadOnly = true;
+            this.loadListOfEventsGridView.Size = new System.Drawing.Size(336, 170);
+            this.loadListOfEventsGridView.TabIndex = 8;
+            this.loadListOfEventsGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadListOfEventsGridView_CellClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(457, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 19);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "List of Events";
+            // 
             // UserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(825, 468);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.loadListOfEventsGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.loadUserDataGridView);
             this.Name = "UserManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "User Management";
+            this.Text = "Update / Delete / Search Event ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserManagement_FormClosing);
             this.Load += new System.EventHandler(this.UserManagement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.loadUserDataGridView)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userWiseEventDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SearchEventByImportanceDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadListOfEventsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView loadUserDataGridView;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button addUserButton;
-        private System.Windows.Forms.TextBox addUserNameTextBox;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button updateUserButton;
-        private System.Windows.Forms.TextBox updateUserNameTextBox;
+        private System.Windows.Forms.Button updateEventButton;
+        private System.Windows.Forms.TextBox updateEventTitleTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button deleteUserButton;
-        private System.Windows.Forms.TextBox deleteUserIdTextBox;
+        private System.Windows.Forms.Button deleteEventButton;
+        private System.Windows.Forms.TextBox deleteEventTitleTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView userWiseEventDataGridView;
-        private System.Windows.Forms.ComboBox userWiseEventComboBox;
+        private System.Windows.Forms.DataGridView SearchEventByImportanceDataGridView;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView loadListOfEventsGridView;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker updateEventLastDateTimePicker;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox updateEventDescriptionTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox SearchEventByImportanceComboBox;
     }
 }

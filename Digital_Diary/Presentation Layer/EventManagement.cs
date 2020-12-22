@@ -14,11 +14,14 @@ namespace Digital_Diary.Presentation_Layer
     public partial class EventManagement : Form
     {
         Home home;
-        public EventManagement(Home home)
+        string message;
+        public EventManagement(Home home,string message)
         {
+            this.message = message;
             this.home = home;
             InitializeComponent();
             addEventButton.Click += this.RefreshGridView;
+            addEventButton.Click += this.ClearFields; 
         }
         private void EventManagement_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -27,21 +30,26 @@ namespace Digital_Diary.Presentation_Layer
 
         private void EventManagement_Load(object sender, EventArgs e)
         {
-            EventService eventService = new EventService();
-            loadEentListGridView.DataSource = eventService.GetEventList();
             UserService userService = new UserService();
-            addEventUserComboBox.DataSource = userService.GetUserNameList();
+            loadEentListGridView.DataSource = userService.GetEventListByUser(message);
+            //UserService userService = new UserService();
+            //addEventUserComboBox.DataSource = userService.GetUserNameList();
         }
         void RefreshGridView(object sender, EventArgs e)
         {
-            EventService eventService = new EventService();
-            loadEentListGridView.DataSource = eventService.GetEventList();
+            UserService userService = new UserService();
+            loadEentListGridView.DataSource = userService.GetEventListByUser(message);
+        }
+        void ClearFields(object sender, EventArgs e)
+        {
+            addEventTitleTextBox.Text = addEventDescriptionTextBox.Text = addEventImportanceComboBox.Text = string.Empty;
+
         }
 
         private void addEventButton_Click(object sender, EventArgs e)
         {
             EventService eventService = new EventService();
-            int result = eventService.AddNewEvent(addEventTitleTextBox.Text,addEventDateTimePicker.Text,addEventDescriptionTextBox.Text,addEventImportanceComboBox.Text,addEventUserComboBox.Text);
+            int result = eventService.AddNewEvent(addEventTitleTextBox.Text,addEventDateTimePicker.Text,addEventDescriptionTextBox.Text,addEventImportanceComboBox.Text,message);
             if (result > 0)
             {
                 MessageBox.Show("Event added successfully");
@@ -55,7 +63,7 @@ namespace Digital_Diary.Presentation_Layer
         private void SearchEventTitleTextBox_TextChanged(object sender, EventArgs e)
         {
             EventService eventService = new EventService();
-            searchEventGridView.DataSource = eventService.GetEventListForSearch(SearchEventTitleTextBox.Text);
+            searchEventGridView.DataSource = eventService.GetEventListForSearch(message,SearchEventTitleTextBox.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)

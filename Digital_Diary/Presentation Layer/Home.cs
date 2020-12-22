@@ -12,8 +12,10 @@ namespace Digital_Diary.Presentation_Layer
 {
     public partial class Home : Form
     {
-        public Home()
+        string message;
+        public Home(string message)
         {
+            this.message = message;
             InitializeComponent();
         }
 
@@ -24,14 +26,14 @@ namespace Digital_Diary.Presentation_Layer
 
         private void manageUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserManagement userManagement = new UserManagement(this);
+            UserManagement userManagement = new UserManagement(this,message);
             userManagement.Show();
             this.Hide();
         }
 
         private void manageEventToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EventManagement eventManagement = new EventManagement(this);
+            EventManagement eventManagement = new EventManagement(this,message);
             eventManagement.Show();
             this.Hide();
         }
