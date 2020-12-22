@@ -136,8 +136,8 @@ namespace Digital_Diary.Presentation_Layer
 
         private void SearchEventByImportanceDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            eid = (int)loadListOfEventsGridView.Rows[e.RowIndex].Cells[0].Value;
-            deleteEventTitleTextBox.Text = loadListOfEventsGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            eid = (int)SearchEventByImportanceDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            deleteEventTitleTextBox.Text = SearchEventByImportanceDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         private void deleteEventButton_Click(object sender, EventArgs e)
